@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark
+}
+
+* {
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  margin: 0;
+  background: #0b0f19;
+  color: #fff;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif
+}
+
+.glass {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .12);
+  background: linear-gradient(145deg, rgba(21, 29, 46, .66), rgba(8, 13, 24, .5));
+  box-shadow: 0 22px 70px rgba(0, 0, 0, .38), inset 0 1px rgba(255, 255, 255, .08);
+  backdrop-filter: blur(24px) saturate(145%);
+  transition: .1s
+}
+
+.glass:hover {
+  border-color: rgba(0, 245, 160, 0.25);
+  box-shadow: 0 28px 86px rgba(0, 0, 0, .46), 0 0 34px rgba(0, 217, 246, .08)
+}
+
+.aurora {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(90px);
+  opacity: .28;
+  mix-blend-mode: screen;
+  animation: drift 14s ease-in-out infinite alternate;
+  pointer-events: none
+}
+
+.a1 {
+  width: 48vw;
+  height: 38vw;
+  left: -10vw;
+  top: -8vw;
+  background: #00f5a0
+}
+
+.a2 {
+  width: 45vw;
+  height: 42vw;
+  right: -8vw;
+  top: 28vh;
+  background: #00d9f6
+}
+
+@keyframes drift {
+  to {
+    transform: translate3d(12vw, 9vh, 0) scale(1.18)
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+  *,
+  *:before,
+  *:after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important
+  }
+}
